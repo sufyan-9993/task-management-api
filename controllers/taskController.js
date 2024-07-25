@@ -12,7 +12,7 @@ export const getTasks = tryCatchHandler(
 
     const sort = {};
     if (sortBy) sort[sortBy] = 1;
-
+    const count = await TaskModel.find(filters).countDocuments()
     const tasks = await TaskModel.find(filters)
       .sort(sort)
       .skip((page - 1) * limit)
@@ -20,7 +20,8 @@ export const getTasks = tryCatchHandler(
 
     res.status(200).json({
       success: true,
-      tasks
+      tasks,
+      count
     })
 
   }
