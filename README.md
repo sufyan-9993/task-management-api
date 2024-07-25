@@ -44,11 +44,6 @@ Open your browser or API client (like Postman) and navigate to:
 
 http://localhost:5000/tasks
 
-Running Tests
-Run Unit Tests
-
-npm test
-This will run the tests located in the /tests directory.
 
 API Endpoints
 
