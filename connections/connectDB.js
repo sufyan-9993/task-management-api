@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
-const connectDB = () => {
+const connectDB = (URI) => {
     // MongoDB connection
-    mongoose.connect('mongodb://localhost:27017/taskdb')
+    mongoose.connect(URI)
         .then(() => console.log('MongoDB connected'))
         .catch(err => console.error('MongoDB connection error:', err));
 

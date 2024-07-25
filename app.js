@@ -1,11 +1,13 @@
 import express from 'express';
+import 'dotenv/config'
 import taskRoutes from './routes/taskRoutes.js';
 import connectDB from './connections/connectDB.js';
 import errorHandler from './middlewares/errorHandler.js';
 
 
-connectDB()
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGO_URI
+connectDB(MONGO_URI)
 
 const app = express();
 app.use(express.json());
